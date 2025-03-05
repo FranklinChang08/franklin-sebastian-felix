@@ -42,11 +42,13 @@
 
 <body class="bg-black text-white font-poppins">
     <nav class="fixed top-0 left-0 w-full z-50">
-        <div class="w-full p-6 flex justify-between items-center px-12">
+        <div class="w-full p-4 md:p-6 flex justify-between items-center px-4 md:px-12">
             <div>
-                <h1 class="text-xl uppercase font-bold ">My Portofolio</h1>
+                <h1 class="text-lg md:text-xl uppercase font-bold">My Portofolio</h1>
             </div>
-            <ul class="flex gap-8 text-sm font-medium uppercase">
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex gap-4 lg:gap-8 text-xs md:text-sm font-medium uppercase">
                 <li>
                     <a href="#" class="relative bg-transparent transition-all duration-300 ease-in-out w-fit group">
                         <span
@@ -87,6 +89,54 @@
                     </a>
                 </li>
             </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="mobile-menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Slide Down -->
+        <div id="mobile-menu"
+            class="md:hidden absolute top-full left-0 w-full bg-black/90 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="flex flex-col items-center py-4 space-y-4">
+                <a href="#" class="text-white text-base relative uppercase transition-all
+                duration-300 ease-in-out w-fit group">
+                    <span
+                        class="absolute bottom-0 left-0 transition-all duration-300 ease-in-out bg-white w-0 h-[1px] group-hover:w-full"></span>
+                    Home
+                </a>
+                <a href="#aboutme" class="text-white text-base relative uppercase transition-all
+                    duration-300 ease-in-out w-fit group">
+                    <span
+                        class="absolute bottom-0 left-0 transition-all duration-300 ease-in-out bg-white w-0 h-[1px] group-hover:w-full"></span>
+                    About
+                </a>
+                <a href="#project" class="text-white text-base relative uppercase transition-all
+                    duration-300 ease-in-out w-fit group">
+                    <span
+                        class="absolute bottom-0 left-0 transition-all duration-300 ease-in-out bg-white w-0 h-[1px] group-hover:w-full"></span>
+                    Project
+                </a>
+                <a href="#service" class="text-white text-base relative uppercase transition-all
+                    duration-300 ease-in-out w-fit group">
+                    <span
+                        class="absolute bottom-0 left-0 transition-all duration-300 ease-in-out bg-white w-0 h-[1px] group-hover:w-full"></span>
+                    Service
+                </a>
+                <a href="#contact" class="text-white text-base relative uppercase transition-all
+                    duration-300 ease-in-out w-fit group">
+                    <span
+                        class="absolute bottom-0 left-0 transition-all duration-300 ease-in-out bg-white w-0 h-[1px] group-hover:w-full"></span>
+                    Contact
+                </a>
+            </div>
         </div>
     </nav>
     <div class="relative">
@@ -97,7 +147,8 @@
 
         <div class="absolute left-12 inset-y-0 flex flex-col justify-center items-start">
             <h1 class="text-md text-teal-400 uppercase font-bold hidden-section">Welcome to my portofolio</h1>
-            <h1 class="text-7xl w-3/4 uppercase font-bold hidden-section">Franklin Sebastian Felix</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl w-3/4 uppercase font-bold hidden-section">Franklin
+                Sebastian Felix</h1>
             <button
                 class="relative hidden-section mt-2 w-fit bg-white/10 px-4 py-2 rounded-sm font-semibold uppercase overflow-hidden group">
                 <span
@@ -109,7 +160,7 @@
     </div>
 
     <section id="aboutme">
-        <div class="p-12 grid grid-cols-2">
+        <div class="p-12 grid grid-cols-1 md:grid-cols-2">
             <div>
                 <!-- Kosong untuk gambar atau konten lain nanti -->
             </div>
@@ -144,40 +195,41 @@
         </div>
     </section>
 
-    <section id="project">
+    <section id="project" class="w-full">
         <div class="relative overflow-hidden h-screen w-full">
             <div id="carousel" class="flex transition-transform duration-700 ease-in-out h-full">
                 <!-- Slide 1 -->
-                <div class="min-w-full h-screen flex flex-col justify-center items-center">
-                    <img src="./static/donghuaverse.png" class="w-1/2 rounded-md shadow-lg hidden-section"
+                <div class="min-w-full h-screen flex flex-col justify-center items-center px-4 md:px-0">
+                    <img src="./static/donghuaverse.png"
+                        class="w-full md:w-3/4 max-w-xl rounded-md shadow-lg hidden-section object-cover"
                         alt="DonghuaVerse Image 1">
-                    <div class="mt-6 w-1/2 flex justify-center items-center flex-col text-center">
-                        <h4 class="text-xl font-semibold mb-2 hidden-section">DonghuaVerse</h4>
-                        <div class="flex gap-4 text-sm mb-2 hidden-section">
+                    <div class="mt-6 w-full md:w-1/2 flex justify-center items-center flex-col text-center px-4">
+                        <h4 class="text-lg md:text-xl font-semibold mb-2 hidden-section">DonghuaVerse</h4>
+                        <div class="flex gap-4 text-xs md:text-sm mb-2 hidden-section">
                             <p>Not Published</p>
                             <p>Learning Project</p>
                         </div>
-                        <div class="w-3/4 hidden-section">
-                            <p class="text-sm">Platform streaming untuk menonton donghua berkualitas dengan update
-                                terbaru dan info lengkap!</p>
+                        <div class="w-full md:w-3/4 hidden-section">
+                            <p class="text-xs md:text-sm">Platform streaming untuk menonton donghua berkualitas dengan
+                                update terbaru dan info lengkap!</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="min-w-full h-screen flex flex-col justify-center items-center">
-                    <img src="./static/phpassenger.png" class="w-1/2 rounded-md shadow-lg hidden-section"
+                <div class="min-w-full h-screen flex flex-col justify-center items-center px-4 md:px-0">
+                    <img src="./static/phpassenger.png"
+                        class="w-full md:w-3/4 max-w-xl rounded-md shadow-lg hidden-section object-cover"
                         alt="PHPassenger Image">
-                    <div class="mt-6 w-1/2 flex justify-center items-center flex-col text-center">
-                        <h4 class="text-xl font-semibold mb-2 hidden-section">PHPassenger</h4>
-                        <div class="flex gap-4 text-sm mb-2 hidden-section">
+                    <div class="mt-6 w-full md:w-1/2 flex justify-center items-center flex-col text-center px-4">
+                        <h4 class="text-lg md:text-xl font-semibold mb-2 hidden-section">PHPassenger</h4>
+                        <div class="flex gap-4 text-xs md:text-sm mb-2 hidden-section">
                             <p>Not Published</p>
                             <p>Learning Project</p>
                         </div>
-                        <div class="w-3/4">
-                            <p class="text-sm hidden-section">Platform pemesanan tiket yang cepat dan mudah, memastikan
-                                perjalanan Anda
-                                lebih nyaman dan terorganisir!</p>
+                        <div class="w-full md:w-3/4">
+                            <p class="text-xs md:text-sm hidden-section">Platform pemesanan tiket yang cepat dan mudah,
+                                memastikan perjalanan Anda lebih nyaman dan terorganisir!</p>
                         </div>
                     </div>
                 </div>
@@ -185,22 +237,22 @@
 
             <!-- Navigation Buttons -->
             <button id="prev"
-                class="absolute hidden-section z-30 left-5 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/15 bg-opacity-50 text-white text-center w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-opacity">
-                <i class="fa-solid fa-chevron-left"></i>
+                class="absolute hidden-section z-30 left-2 md:left-5 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/15 bg-opacity-50 text-white text-center w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-opacity">
+                <i class="fa-solid fa-chevron-left text-sm md:text-base"></i>
             </button>
             <button id="next"
-                class="absolute hidden-section z-30 right-5 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/15 bg-opacity-50 text-white text-center w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-opacity">
-                <i class="fa-solid fa-chevron-right"></i>
+                class="absolute hidden-section z-30 right-2 md:right-5 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/15 bg-opacity-50 text-white text-center w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-opacity">
+                <i class="fa-solid fa-chevron-right text-sm md:text-base"></i>
             </button>
 
             <!-- Indicators -->
             <div id="indicators"
-                class="absolute hidden-section bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+                class="absolute hidden-section bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
             </div>
         </div>
     </section>
 
-    <section id="service" class="py-16 px-6 md:px-16 text-start grid grid-cols-2 gap-8">
+    <section id="service" class="py-16 px-6 md:px-16 text-start grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
             <h2 class="text-4xl font-bold mb-6 text-teal-400 hidden-section">What We Do</h2>
             <p class="text-gray-300 max-w-2xl mx-auto mb-6 hidden-section">
@@ -217,9 +269,9 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div
-                class="bg-[#0d0d0d] transition-all duration-300 ease-in-out hover:bg-gradient-to-t hover:from-teal-400/50 hover:-translate-y-10 hover:from-10% hover:to-transparent hover:shadow-teal-400 p-6 -translate-y-6 rounded-sm shadow-lg">
+                class="bg-[#0d0d0d] transition-all duration-300 ease-in-out hover:bg-gradient-to-t hover:from-teal-400/50 hover:-translate-y-4 md:hover:-translate-y-10 hover:from-10% hover:to-transparent hover:shadow-teal-400 p-6 -translate-y-0 md:-translate-y-6 rounded-sm shadow-lg">
                 <h3 class="text-xl font-semibold text-teal-300 hidden-section">Web Development</h3>
                 <p class="text-white mt-2 hidden-section">Building responsive and dynamic websites using modern
                     frameworks.</p>
@@ -230,7 +282,7 @@
                 <p class="text-white mt-2 hidden-section">Creating user-friendly and visually appealing designs.</p>
             </div>
             <div
-                class="bg-[#0d0d0d] transition-all duration-300 ease-in-out hover:bg-gradient-to-t hover:from-teal-400/50 hover:-translate-y-10 hover:from-10% hover:to-transparent hover:shadow-teal-400 p-6 rounded-sm -translate-y-6 shadow-lg">
+                class="bg-[#0d0d0d] transition-all duration-300 ease-in-out hover:bg-gradient-to-t hover:from-teal-400/50 hover:-translate-y-4 md:hover:-translate-y-10 hover:from-10% hover:to-transparent hover:shadow-teal-400 p-6 rounded-sm -translate-y-0 md:-translate-y-6 shadow-lg">
                 <h3 class="text-xl font-semibold text-teal-300 hidden-section">Backend Development</h3>
                 <p class="text-white mt-2 hidden-section">Developing secure and scalable server-side applications.</p>
             </div>
@@ -244,7 +296,8 @@
 
     <section id="contact">
         <div class="w-full relative flex items-center justify-center">
-            <div class="w-3/4 p-12 rounded-md bg-white/10 grid grid-cols-3 place-items-center z-10 hidden-section">
+            <div
+                class="w-3/4 p-12 rounded-md bg-white/10 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-4 place-items-center z-10 hidden-section">
                 <div class="col-span-2">
                     <h1 class="text-4xl uppercase font-bold mb-2 "><span class="text-teal-400">Contact</span> Me</h1>
                     <p class="">Interested in working together or have any questions? Feel free to reach out! I'm always
@@ -252,10 +305,8 @@
                         discussing new projects, collaborations, or opportunities. Drop me a message, and I'll get back
                         to you as soon as possible!</p>
                 </div>
-                <div>
-                    <a href="https://mail.google.com/mail/?view=cm&to=franklinchang0129@example.com
-                    " class="bg-teal-600 px-4 py-2 font-bold uppercase ">Contact</a>
-                </div>
+                <a href="https://mail.google.com/mail/?view=cm&to=franklinchang0129@example.com
+                    " class="bg-teal-600 px-8 py-2 font-bold uppercase ">Contact</a>
             </div>
             <div class="absolute top-0 left-0 h-96 w-full z-0">
                 <img src="./static/galaxy.jpg" class="h-full w-full object-cover" alt="">
@@ -308,6 +359,31 @@
             © 2025 Franklin Sebastian Felix. All rights reserved.
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuToggle.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('max-h-0')) {
+                    mobileMenu.classList.remove('max-h-0');
+                    mobileMenu.classList.add('max-h-screen');
+                } else {
+                    mobileMenu.classList.remove('max-h-screen');
+                    mobileMenu.classList.add('max-h-0');
+                }
+            });
+
+            // Close menu when a link is clicked
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('max-h-screen');
+                    mobileMenu.classList.add('max-h-0');
+                });
+            });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const sections = document.querySelectorAll(".hidden-section");
