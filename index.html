@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SebasScript</title>
+
+    <link rel="stylesheet" href="./static/style/font.css">
+</head>
+
+<body class="bg-black">
+    <section id="loadingScreen"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm text-white">
+        <h5 class="poppins text-xl">Loading...</h5>
+        <div class="relative mt-4 bg-white/20 w-96 h-[4px] rounded-full overflow-hidden">
+            <div id="loadingBar" class="absolute left-0 top-0 h-full bg-white rounded-full animate-loading"></div>
+        </div>
+    </section>
+
+    <nav
+        class="bg-black/95 border-b border-white/30 montserrat flex items-center justify-center fixed top-0 left-0 w-full z-40 backdrop-blur-md">
+        <div class="w-full max-w-[1400px] flex items-center justify-between p-4 text-white">
+            <!-- Logo -->
+            <h2 class="font-bold uppercase text-xl">SebasScript</h2>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center justify-center gap-6">
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="#">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Home
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="#aboutMe">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        About Me
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./project.html">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Project
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./skills.html">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Skills
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="#contactMe">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Contact Me
+                    </a></li>
+            </ul>
+
+            <!-- Desktop Social Icons -->
+            <div class="hidden lg:flex items-center justify-center gap-2">
+                <a href="https://github.com/FranklinChang08" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/franklin_chang_08/" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/franklin-sebastian-felix-435479358" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center">
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden text-white absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-white/30 overflow-hidden max-h-0 transition-all duration-300">
+            <ul class="flex flex-col items-center py-4">
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="#">Home</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="#aboutMe">About
+                        Me</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./project.html">Project</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./skills.html">Skills</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="#contactMe">Contact
+                        Me</a></li>
+            </ul>
+
+            <!-- Mobile Social Icons -->
+            <div class="flex items-center justify-center gap-4 pb-6">
+                <a href="https://github.com/FranklinChang08" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/franklin_chang_08/" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/franklin-sebastian-felix-435479358" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="w-full h-[100vh] relative">
+            <img class="w-full h-full object-cover absolute top-0 left-0 z-0" src="./static/img/background.jpg" alt="">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-r z-10 from-black/50 via-black/25 to-black/50">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t z-10 from-black via-transparent">
+                </div>
+                <div
+                    class="absolute top-0 left-0 w-full h-full text-white z-20 flex items-center justify-center flex-col">
+                    <h1 class="font-bold text-4xl md:text-6xl lg:text-8xl uppercase bebas-neue">Creative Design & Web
+                        Development</h1>
+                    <p class="w-full md:w-1/2 px-4 text-center mt-4 montserrat"> Passionate about design and code, I
+                        bring a creative
+                        touch
+                        to
+                        web
+                        development — building clean, responsive, and purposeful websites
+                        that connect with users.</p>
+                    <div class="flex items-center justify-around gap-4 mt-6">
+                        <a href="/about"
+                            class="relative inline-block overflow-hidden bg-white px-8 py-2 font-bold uppercase text-sm text-black transition-all duration-300 ease-in-out group montserrat hover:outline hover:outline-white">
+                            <span
+                                class="absolute inset-0 w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full z-0"></span>
+                            <span
+                                class="relative z-10 transition-colors duration-300 ease-in-out group-hover:text-white">
+                                About Me
+                            </span>
+                        </a>
+                        <a href="/about"
+                            class="relative inline-block overflow-hidden bg-white px-8 py-2 font-bold uppercase text-sm text-black transition-all duration-300 ease-in-out group montserrat hover:outline hover:outline-white">
+                            <span
+                                class="absolute inset-0 w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full z-0"></span>
+                            <span
+                                class="relative z-10 transition-colors duration-300 ease-in-out group-hover:text-white">
+                                Contact Me
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="about-me" id="aboutMe">
+        <div class="w-full py-16 px-4 sm:px-10 lg:px-16 xl:px-24 text-white">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-6 lg:gap-12 place-items-center">
+                <div class="flex justify-center items-center w-full">
+                    <img class="w-96 h-96 aspect-sqare object-cover grayscale-100" src="./static/img/Foto Ku.jpg"
+                        alt="">
+                </div>
+                <div class="col-span-2 poppins mt-8 md:mt-4 lg:mt-0">
+                    <h1 class="bebas-neue text-6xl">About Me</h1>
+                    <p class="text-justify mt-4">I’m a passionate Software Developer with a strong interest in building
+                        efficient, user-centered,
+                        and
+                        impactful digital solutions. I enjoy exploring both frontend and backend development,
+                        continuously
+                        learning new technologies, and turning ideas into functional products. My goal is to create
+                        software
+                        that not only works well but also provides a meaningful user experience.</p>
+                    <p class="text-justify mt-4">Currently, I’m still in the learning stage and focusing on developing
+                        my skills in website
+                        development. I’m actively exploring modern frameworks, tools, and best practices to strengthen
+                        my foundation as a future professional developer. For me, every project is an opportunity to
+                        grow, experiment, and bring innovative ideas to life.</p>
+                    <div class="flex items-center gap-4 mt-6">
+                        <a href=""
+                            class="relative inline-block overflow-hidden bg-white px-8 py-2 font-bold uppercase text-sm text-black transition-all duration-300 ease-in-out group montserrat hover:outline hover:outline-white">
+                            <span
+                                class="absolute inset-0 w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full z-0"></span>
+                            <span
+                                class="relative z-10 transition-colors duration-300 ease-in-out group-hover:text-white">
+                                Project
+                            </span>
+                        </a>
+                        <a href=""
+                            class="relative inline-block overflow-hidden bg-white px-8 py-2 font-bold uppercase text-sm text-black transition-all duration-300 ease-in-out group montserrat hover:outline hover:outline-white">
+                            <span
+                                class="absolute inset-0 w-0 bg-black transition-all duration-300 ease-in-out group-hover:w-full z-0"></span>
+                            <span
+                                class="relative z-10 transition-colors duration-300 ease-in-out group-hover:text-white">
+                                Contact Me
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-work" id="myWork">
+        <div class="w-full py-16 px-4 sm:px-10 lg:px-16 xl:px-24 text-white">
+            <div class="flex justify-center items-center flex-col">
+                <h2 class="bebas-neue text-6xl text-center">My Work</h2>
+                <p class="text-center mb-6 w-full lg:w-1/2">I create modern and responsive websites by combining web
+                    development,
+                    UI/UX design, and fullstack
+                    solutions to deliver engaging digital experiences.</p>
+                <div class="flex items-center justify-center gap-2">
+                    <div class="w-1 h-1 rounded-full bg-white"></div>
+                    <div class="w-1 h-1 rounded-full bg-white"></div>
+                    <div class="w-24 h-1 rounded-full bg-white"></div>
+                    <div class="w-1 h-1 rounded-full bg-white"></div>
+                    <div class="w-1 h-1 rounded-full bg-white"></div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16 gap-4">
+                <div
+                    class="bg-white/10 p-4 rounded-md border border-white/20 transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <div class="border border-white/20 bg-white/10 w-max p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tabler">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 9l3 3l-3 3" />
+                            <path d="M13 15h3" />
+                            <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 class="montserrat mt-8 font-bold text-2xl">Website Development</h5>
+                        <p class="mt-2 text-justify">I develop and maintain interactive and high-performance websites
+                            using modern technologies. I focus on writing clean, efficient code and ensuring fast,
+                            responsive, and cross-browser compatible experiences.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 p-4 rounded-md border border-white/20 transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <div class="border border-white/20 bg-white/10 w-max p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-artboard">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 8m0 1a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1z" />
+                            <path d="M3 8l1 0" />
+                            <path d="M3 16l1 0" />
+                            <path d="M8 3l0 1" />
+                            <path d="M16 3l0 1" />
+                            <path d="M20 8l1 0" />
+                            <path d="M20 16l1 0" />
+                            <path d="M8 20l0 1" />
+                            <path d="M16 20l0 1" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 class="montserrat mt-8 font-bold text-2xl">UI / UX Design</h5>
+                        <p class="mt-2 text-justify">I design intuitive and visually appealing interfaces using
+                            Figma.
+                            My work focuses on creating consistent design systems and smooth user flows to deliver
+                            engaging and user-friendly experiences.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 p-4 rounded-md border border-white/20 transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <div class="border border-white/20 bg-white/10 w-max p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brackets-angle">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 4l-5 8l5 8" />
+                            <path d="M16 4l5 8l-5 8" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 class="montserrat mt-8 font-bold text-2xl">Full-Stack Development</h5>
+                        <p class="mt-2 text-justify">I build complete web solutions from front-end to back-end. This
+                            includes developing interfaces, managing databases, integrating APIs, and implementing
+                            authentication systems for scalable web applications.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 p-4 rounded-md border border-white/20 transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <div class="border border-white/20 bg-white/10 w-max p-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-bulb">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+                            <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+                            <path d="M9.7 17l4.6 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 class="montserrat mt-8 font-bold text-2xl">Creative & Responsive Design</h5>
+                        <p class="mt-2 text-justify">I combine creativity with modern design principles to craft
+                            visually striking and fully responsive layouts. Using Tailwind CSS and Bootstrap, I ensure
+                            designs adapt seamlessly across all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="project">
+        <div class="w-full py-16 px-4 sm:px-10 lg:px-16 xl:px-24 text-white">
+            <h2 class="bebas-neue text-6xl text-center">My Project</h2>
+            <p class="text-center mb-6">A personal project I created to practice and apply what I’ve learned in web
+                development.</p>
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-24 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                <div
+                    class="bg-white/10 border border-white/20 rounded-md transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <img class="rounded-t-sm" src="./static/img/project/jovarental.png" alt="">
+                    <div class="p-3">
+                        <h2 class="text-xl montserrat uppercase font-bold">Jovarental</h2>
+                        <div class="flex mt-2 gap-2">
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-laravel">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />
+                                    <path d="M11 18v4" />
+                                    <path d="M7 15.5l7 -4" />
+                                    <path d="M14 7.5v4" />
+                                    <path d="M14 11.5l4 2.5" />
+                                    <path d="M11 13v-7.5l-4 -2.5l-4 2.5" />
+                                    <path d="M7 8l4 -2.5" />
+                                    <path d="M18 10l4 -2.5" />
+                                </svg>
+                                Laravel
+                            </span>
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+                                </svg>
+                                Tailwind
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="font-bold poppins">Front-End Development</h5>
+                            <p class="text-sm text-justify">A car rental platform that connects users with partner
+                                providers, allowing them to rent
+                                vehicles easily through a collaborative system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-md transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <img class="rounded-t-sm" src="./static/img/project/jovarental.png" alt="">
+                    <div class="p-3">
+                        <h2 class="text-xl montserrat uppercase font-bold">DonghuaVerse</h2>
+                        <div class="flex mt-2 gap-2">
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-laravel">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />
+                                    <path d="M11 18v4" />
+                                    <path d="M7 15.5l7 -4" />
+                                    <path d="M14 7.5v4" />
+                                    <path d="M14 11.5l4 2.5" />
+                                    <path d="M11 13v-7.5l-4 -2.5l-4 2.5" />
+                                    <path d="M7 8l4 -2.5" />
+                                    <path d="M18 10l4 -2.5" />
+                                </svg>
+                                Laravel
+                            </span>
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+                                </svg>
+                                Tailwind
+                            </span>
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+                                </svg>
+                                Preline
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="font-bold poppins">Full-Stack Development</h5>
+                            <p class="text-sm text-justify">A streaming website that provides various donghua titles,
+                                allowing users to watch and explore Chinese animations easily through an integrated
+                                platform.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white/10 border border-white/20 rounded-md transition-all duration-300 ease-in-out hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-4">
+                    <img class="rounded-t-sm" src="./static/img/project/kylin.png" alt="">
+                    <div class="p-3">
+                        <h2 class="text-xl montserrat uppercase font-bold">Kylin Landing Page</h2>
+                        <div class="flex mt-2 gap-2">
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-nextjs">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                                    <path d="M15 12v-3" />
+                                </svg>
+                                Next JS
+                            </span>
+                            <span
+                                class="flex gap-1 text-xs items-center justify-center border border-white/20 bg-white/10 px-4 py-1 rounded-full poppins">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+                                </svg>
+                                Tailwind
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <h5 class="font-bold poppins">Front-End Development</h5>
+                            <p class="text-sm text-justify">A landing page created for our team, Kylin, designed to
+                                showcase our identity, values, and collaborative projects in a clean and modern
+                                interface.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" mt-4 flex justify-center items-center">
+                <a href="./project.html"
+                    class="group flex items-center justify-center gap-2 border-2 rounded-full border-white/20 bg-white/10 montserrat text-sm font-semibold uppercase px-6 py-2 transition-all duration-300 ease-in-out transform hover:scale-105">
+                    <span>See Project</span>
+                    <span class="transition-all duration-300 ease-in-out group-hover:ml-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-move-right-icon lucide-move-right">
+                            <path d="M18 8L22 12L18 16" />
+                            <path d="M2 12H22" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-me" id="contactMe">
+        <div class="w-full py-16 px-4 sm:px-10 lg:px-16 xl:px-24 text-white flex items-center justify-center">
+            <div
+                class="w-3/4 border border-white/20 rounded-md bg-white/10 backdrop-blur-md p-6 grid grid-cols-1 lg:grid-cols-3 gap-4 place-items-center shadow-[10px_10px_10px_rgba(255,255,255,0.1)]">
+                <div class="col-span-2">
+                    <h2 class="bebas-neue font-bold text-4xl mb-0">Contact Me</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla qui minus est odit magni impedit
+                        doloremque perferendis error excepturi ipsum inventore dicta blanditiis mollitia, perspiciatis
+                        deleniti fugit officia in ea.</p>
+                </div>
+                <a href="https://mail.google.com/mail/?view=cm&to=franklinchang0129@gmail.com"
+                    class="w-max h-max px-8 py-2 bg-white text-black poppins text-xl font-bold">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white/10 backdrop-blur-sm border-t-2 border-white/20 backdrop-blur-sm relative">
+        <div
+            class="absolute top-12 left-10 w-72 h-72 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+        <div
+            class="absolute bottom-12 right-16 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+        <div
+            class="absolute top-12 right-12 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-12 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- About Section -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">SebasScript</h4>
+                    <p class="text-md leading-relaxed opacity-90">
+                        Junior programmer passionate about learning and growing in web development.
+                        Building projects to improve my skills and create meaningful solutions.
+                    </p>
+                    <div class="flex gap-3 mt-6">
+                        <a href="https://github.com/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                                <path d="M9 18c-4.51 2-5-2-7-2" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="./index.html"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Home
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                About Me
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./project.html"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Projects
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Skills
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Contact
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Get In Touch</h4>
+                    <p class="text-sm opacity-90 mb-3">
+                        📧 franklinchang0129@email.com
+                    </p>
+                    <p class="text-sm opacity-90 mb-4">
+                        📍 Batam, Indonesia
+                    </p>
+                    <p class="text-sm opacity-80 italic">
+                        "Learning to code, one line at a time."
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div
+                class="border-t border-white/20 mt-8 pt-6 text-center flex justify-between items-center text-sm opacity-75">
+                <p>&copy; 2025 SebasScript.</p>
+                <p> Built with passion and dedication.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let isOpen = false;
+
+    hamburger.addEventListener('click', () => {
+        isOpen = !isOpen;
+        const spans = hamburger.querySelectorAll('span');
+
+        if (isOpen) {
+            // Transform to X
+            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            mobileMenu.style.maxHeight = '500px';
+        } else {
+            // Transform back to hamburger
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+            mobileMenu.style.maxHeight = '0';
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            isOpen = false;
+            const spans = hamburger.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+            mobileMenu.style.maxHeight = '0';
+        });
+    });
+</script>
+<script>
+    document.body.style.overflow = "hidden"; // 🔒 Kunci scroll saat loading muncul
+
+    window.addEventListener("load", () => {
+        const loadingScreen = document.getElementById("loadingScreen");
+
+        // Delay agar animasi sempat terlihat
+        setTimeout(() => {
+            loadingScreen.classList.add("opacity-0", "pointer-events-none", "transition-all", "duration-500");
+            document.body.style.overflow = "auto"; // 🔓 Kembalikan scroll setelah loading selesai
+
+            setTimeout(() => loadingScreen.remove(), 500);
+        }, 2500);
+    });
+</script>
+
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SebasScript</title>
+
+    <link rel="stylesheet" href="./static/style/font.css">
+</head>
+
+<body class="bg-black">
+    <section id="loadingScreen"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm text-white">
+        <h5 class="poppins text-xl">Loading...</h5>
+        <div class="relative mt-4 bg-white/20 w-96 h-[4px] rounded-full overflow-hidden">
+            <div id="loadingBar" class="absolute left-0 top-0 h-full bg-white rounded-full animate-loading"></div>
+        </div>
+    </section>
+    <nav
+        class="bg-black/95 border-b border-white/30 montserrat flex items-center justify-center fixed top-0 left-0 w-full z-40 backdrop-blur-md">
+        <div class="w-full max-w-[1400px] flex items-center justify-between p-4 text-white">
+            <!-- Logo -->
+            <h2 class="font-bold uppercase text-xl">SebasScript</h2>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center justify-center gap-6">
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./index.html">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Home
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./index.html#aboutMe">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        About Me
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./project.html">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Project
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./skills.html">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Skills
+                    </a></li>
+                <li><a class="group relative px-4 py-1 flex items-center justify-center" href="./index.html#contactMe">
+                        <span
+                            class="bg-white absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        Contact Me
+                    </a></li>
+            </ul>
+
+            <!-- Desktop Social Icons -->
+            <div class="hidden lg:flex items-center justify-center gap-2">
+                <a href="https://github.com/FranklinChang08" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/franklin_chang_08/" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/franklin-sebastian-felix-435479358" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center">
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="lg:hidden text-white absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-white/30 overflow-hidden max-h-0 transition-all duration-300">
+            <ul class="flex flex-col items-center py-4">
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./index.html">Home</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors" href="./index.html#aboutMe">About
+                        Me</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./project.html">Project</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./skills.html">Skills</a></li>
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors" href="./index.html#contactMe">Contact
+                        Me</a></li>
+            </ul>
+
+            <!-- Mobile Social Icons -->
+            <div class="flex items-center justify-center gap-4 pb-6">
+                <a href="https://github.com/FranklinChang08" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/franklin_chang_08/" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/franklin-sebastian-felix-435479358" target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-10 h-10 border-2 rounded-full p-2 flex items-center justify-center hover:bg-white/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="w-full h-[80vh] relative">
+            <img class="w-full h-full object-cover absolute top-0 left-0 z-0" src="./static/img/background.jpg" alt="">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-r z-10 from-black/50 via-black/25 to-black/50">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t z-10 from-black via-transparent">
+                </div>
+                <div
+                    class="absolute top-0 left-0 w-full h-full text-white z-20 flex items-start justify-center flex-col px-8">
+                    <h1 class="font-bold text-4xl md:text-6xl lg:text-8xl uppercase bebas-neue">My Skills Project</h1>
+                    <p class="w-full md:w-1/2 text-start mt-4 montserrat"> Passionate about design and code, I bring a
+                        creative
+                        touch
+                        to
+                        web
+                        development — building clean, responsive, and purposeful websites
+                        that connect with users.</p>
+                    <div class="flex items-center justify-around gap-4 mt-6">
+                        <a href="#skill"
+                            class="bg-white text-black text-xl px-6 py-2 montserrat text-sm uppercase font-bold">
+                            See Skill
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="skill" id="skill">
+        <div class="w-full py-16 px-4 sm:px-10 lg:px-16 xl:px-24 text-white flex flex-col justify-center items-center">
+            <h2 class="bebas-neue text-6xl text-center">My Skills</h2>
+            <p class="text-center mb-6 w-3/4">These are some of the skills and technologies I have learned and continue
+                to
+                develop. I’m constantly improving my abilities to create modern, responsive, and user-friendly web
+                applications.</p>
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-24 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+                <div class="w-1 h-1 rounded-full bg-white"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-6 mt-8">
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-php">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-10 0a10 9 0 1 0 20 0a10 9 0 1 0 -20 0" />
+                        <path
+                            d="M5.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" />
+                        <path
+                            d="M15.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" />
+                        <path d="M12 7.5l-1 5.5" />
+                        <path d="M11.6 10h2.4l-.5 3" />
+                    </svg>
+                    <h6 class="montserrat font-bold">PHP</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-laravel">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />
+                        <path d="M11 18v4" />
+                        <path d="M7 15.5l7 -4" />
+                        <path d="M14 7.5v4" />
+                        <path d="M14 11.5l4 2.5" />
+                        <path d="M11 13v-7.5l-4 -2.5l-4 2.5" />
+                        <path d="M7 8l4 -2.5" />
+                        <path d="M18 10l4 -2.5" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Laravel</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Tailwind</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bootstrap">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2" />
+                        <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2" />
+                        <path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Bootstrap</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-git">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        <path d="M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        <path d="M12 15v-6" />
+                        <path d="M15 11l-2 -2" />
+                        <path d="M11 7l-1.9 -1.9" />
+                        <path
+                            d="M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Git</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-nextjs">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993" />
+                        <path d="M15 12v-3" />
+                    </svg>
+                    <h6 class="montserrat font-bold">NextJS</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-adobe-photoshop">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M3 12c0 -4.243 0 -6.364 1.318 -7.682s3.44 -1.318 7.682 -1.318s6.364 0 7.682 1.318s1.318 3.44 1.318 7.682s0 6.364 -1.318 7.682s-3.44 1.318 -7.682 1.318s-6.364 0 -7.682 -1.318s-1.318 -3.44 -1.318 -7.682" />
+                        <path
+                            d="M6.79 15.79v-3.79m0 0v-2.724c0 -.11 0 -.165 .004 -.211c.044 -.45 .4 -.806 .85 -.85c.046 -.004 .101 -.004 .211 -.004h1.303a1.895 1.895 0 1 1 0 3.789z" />
+                        <path
+                            d="M17.178 11.263c-.164 -.659 -.935 -1.158 -1.862 -1.158c-1.047 0 -1.895 .637 -1.895 1.421c0 .785 .848 1.421 1.895 1.421c1.046 0 1.895 .637 1.895 1.421c0 .785 -.849 1.421 -1.895 1.421c-.93 0 -1.704 -.502 -1.864 -1.165" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Photoshop</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-figma">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z" />
+                        <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Figma</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-python">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 9h-7a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h3" />
+                        <path d="M12 15h7a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-3" />
+                        <path
+                            d="M8 9v-4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-4a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-4" />
+                        <path d="M11 6l0 .01" />
+                        <path d="M13 18l0 .01" />
+                    </svg>
+                    <h6 class="montserrat font-bold">Python</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-js">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M3 15h3v4.5a1.5 1.5 0 0 1 -3 0" />
+                        <path
+                            d="M9 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75" />
+                        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" />
+                    </svg>
+                    <h6 class="montserrat font-bold">JavaScript</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-sql">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path
+                            d="M5 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75" />
+                        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4" />
+                        <path d="M18 15v6h2" />
+                        <path d="M13 15a2 2 0 0 1 2 2v2a2 2 0 1 1 -4 0v-2a2 2 0 0 1 2 -2z" />
+                        <path d="M14 20l1.5 1.5" />
+                    </svg>
+                    <h6 class="montserrat font-bold">SQL</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mongodb">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 3v19" />
+                        <path
+                            d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" />
+                    </svg>
+                    <h6 class="montserrat font-bold">MongoDB</h6>
+                </div>
+                <div
+                    class="bg-white/10 border border-white/20 rounded-sm p-4 aspect-square flex flex-col items-center justify-center space-y-2 transition-all duration-300 ease-in-out transform hover:shadow-[10px_10px_10px_rgba(255,255,255,0.2)] hover:scale-105 hover:-translate-y-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-file-type-tsx">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M16 15l4 6" />
+                        <path d="M16 21l4 -6" />
+                        <path
+                            d="M10 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75" />
+                        <path d="M4.5 15h3" />
+                        <path d="M6 15v6" />
+                    </svg>
+                    <h6 class="montserrat font-bold">TypeScript</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full bg-white/10 backdrop-blur-sm border-t-2 border-white/20 backdrop-blur-sm relative">
+        <div
+            class="absolute top-12 left-10 w-72 h-72 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+        <div
+            class="absolute bottom-12 right-16 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+        <div
+            class="absolute top-12 right-12 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-12 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- About Section -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">SebasScript</h4>
+                    <p class="text-md leading-relaxed opacity-90">
+                        Junior programmer passionate about learning and growing in web development.
+                        Building projects to improve my skills and create meaningful solutions.
+                    </p>
+                    <div class="flex gap-3 mt-6">
+                        <a href="https://github.com/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                                <path d="M9 18c-4.51 2-5-2-7-2" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="./index.html"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Home
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                About Me
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./project.html"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Projects
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Skills
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact"
+                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                                Contact
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Get In Touch</h4>
+                    <p class="text-sm opacity-90 mb-3">
+                        📧 franklinchang0129@email.com
+                    </p>
+                    <p class="text-sm opacity-90 mb-4">
+                        📍 Batam, Indonesia
+                    </p>
+                    <p class="text-sm opacity-80 italic">
+                        "Learning to code, one line at a time."
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div
+                class="border-t border-white/20 mt-8 pt-6 text-center flex justify-between items-center text-sm opacity-75">
+                <p>&copy; 2025 SebasScript.</p>
+                <p> Built with passion and dedication.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let isOpen = false;
+
+    hamburger.addEventListener('click', () => {
+        isOpen = !isOpen;
+        const spans = hamburger.querySelectorAll('span');
+
+        if (isOpen) {
+            // Transform to X
+            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            mobileMenu.style.maxHeight = '500px';
+        } else {
+            // Transform back to hamburger
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+            mobileMenu.style.maxHeight = '0';
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            isOpen = false;
+            const spans = hamburger.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+            mobileMenu.style.maxHeight = '0';
+        });
+    });
+</script>
+<script>
+    document.body.style.overflow = "hidden"; // 🔒 Kunci scroll saat loading muncul
+
+    window.addEventListener("load", () => {
+        const loadingScreen = document.getElementById("loadingScreen");
+
+        // Delay agar animasi sempat terlihat
+        setTimeout(() => {
+            loadingScreen.classList.add("opacity-0", "pointer-events-none", "transition-all", "duration-500");
+            document.body.style.overflow = "auto"; // 🔓 Kembalikan scroll setelah loading selesai
+
+            setTimeout(() => loadingScreen.remove(), 500);
+        }, 2500);
+    });
+</script>
+
+</html>
