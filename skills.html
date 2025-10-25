@@ -98,13 +98,15 @@
             <ul class="flex flex-col items-center py-4">
                 <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
                         href="./index.html">Home</a></li>
-                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors" href="./index.html#aboutMe">About
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./index.html#aboutMe">About
                         Me</a></li>
                 <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
                         href="./project.html">Project</a></li>
                 <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
                         href="./skills.html">Skills</a></li>
-                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors" href="./index.html#contactMe">Contact
+                <li class="w-full text-center"><a class="block py-3 hover:bg-white/10 transition-colors"
+                        href="./index.html#contactMe">Contact
                         Me</a></li>
             </ul>
 
@@ -161,8 +163,13 @@
                         that connect with users.</p>
                     <div class="flex items-center justify-around gap-4 mt-6">
                         <a href="#skill"
-                            class="bg-white text-black text-xl px-6 py-2 montserrat text-sm uppercase font-bold">
-                            See Skill
+                            class="relative inline-block overflow-hidden bg-transparent px-8 py-2 font-bold uppercase text-sm text-black transition-all duration-300 ease-in-out group montserrat hover:outline hover:outline-white">
+                            <span
+                                class="absolute inset-0 w-full bg-white transition-all duration-300 ease-in-out group-hover:w-0 z-0"></span>
+                            <span
+                                class="relative z-10 transition-colors duration-300 ease-in-out group-hover:text-white">
+                                See Skill
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -374,18 +381,19 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="w-full bg-white/10 backdrop-blur-sm border-t-2 border-white/20 backdrop-blur-sm relative">
         <div
-            class="absolute top-12 left-10 w-72 h-72 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+            class="absolute z-0 top-12 left-10 w-72 h-72 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),rgba(255,255,255,0.05))] blur-2xl rounded-full">
         </div>
         <div
-            class="absolute bottom-12 right-16 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+            class="absolute z-0 bottom-12 right-16 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
         </div>
         <div
-            class="absolute top-12 right-12 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
+            class="absolute z-0 top-12 right-12 w-24 h-24 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] blur-2xl rounded-full">
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 py-12 text-white">
+        <div class="relative max-w-7xl z-10 mx-auto px-6 py-12 text-white">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <!-- About Section -->
@@ -396,8 +404,8 @@
                         Building projects to improve my skills and create meaningful solutions.
                     </p>
                     <div class="flex gap-3 mt-6">
-                        <a href="https://github.com/yourusername" target="_blank"
-                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                        <a href="https://github.com/FranklinChang08" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.8)]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -406,8 +414,8 @@
                                 <path d="M9 18c-4.51 2-5-2-7-2" />
                             </svg>
                         </a>
-                        <a href="https://instagram.com/yourusername" target="_blank"
-                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                        <a href="https://www.instagram.com/franklin_chang_08/" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.8)]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -416,8 +424,9 @@
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                             </svg>
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank"
-                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center hover:bg-white/20 hover:border-white transition-all duration-300">
+                        <a href="https://www.linkedin.com/in/franklin-sebastian-felix-435479358" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-10 h-10 border-2 border-white/50 rounded-full flex items-center justify-center transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,255,0.8)]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -435,15 +444,14 @@
                     <h4 class="font-bold text-xl mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li>
-                            <a href="./index.html"
-                                class="group inline-block relative py-1 hover:text-white/90 transition-colors">
+                            <a href="#" class="group inline-block relative py-1 hover:text-white/90 transition-colors">
                                 Home
                                 <span
                                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-full"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#about"
+                            <a href="./index.html#aboutMe"
                                 class="group inline-block relative py-1 hover:text-white/90 transition-colors">
                                 About Me
                                 <span
@@ -459,7 +467,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#skills"
+                            <a href="./skills.html"
                                 class="group inline-block relative py-1 hover:text-white/90 transition-colors">
                                 Skills
                                 <span
@@ -467,7 +475,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#contact"
+                            <a href="./index.html#contactMe"
                                 class="group inline-block relative py-1 hover:text-white/90 transition-colors">
                                 Contact
                                 <span
